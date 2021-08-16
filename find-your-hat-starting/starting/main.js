@@ -81,8 +81,8 @@ class Field {
         const field = new Array(height).fill(0).map(el => new Array(width));
         for (let y = 0; y < height; y++) {
           for (let x = 0; x < width; x++) {
-            const prob = Math.random();
-            field[y][x] = prob > percentage ? fieldCharacter : hole;
+            const randomNumber = Math.random();
+            field[y][x] = randomNumber > percentage ? fieldCharacter : hole;
           }
         }
 
@@ -98,8 +98,8 @@ class Field {
         field[hatLocation.y][hatLocation.x] = hat;
         return field;
       }
-    }
+}
 
 
-const myfield = new Field(Field.generateField(10, 10, 0.2));
+const myfield = new Field(Field.generateField(8, 8, 0.3));
 myfield.playGame();
